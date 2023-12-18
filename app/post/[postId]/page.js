@@ -1,18 +1,19 @@
 import axios from 'axios';
 
-export default async function Post({ params }) {
-    const fetchPost = async () => {
-        const response = await axios.get(
-            `https://jsonplaceholder.typicode.com/posts/${params.postId}`
-        );
-        return response.data;
-    };
+import PostInfo from '@/app/components/PostInfo';
 
-    const post = await fetchPost();
+const fetchPost = async (id) => {
+    const response = await axios.get(
+        `https://jsonplaceholder.typicode.com/posts/${id}`
+    );
+    return response.data;
+};
+
+export default async function Post({ params: { postId } }) {
+    const post = await fetchPost(postId);
     return (
-        <div>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
+        <div className="post">
+            <PostInfo post={post} />
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import axios from 'axios';
-import Link from 'next/link';
+
+import Posts from '@/app/components/Posts';
 
 const fetchPosts = async () => {
     const response = await axios.get(
@@ -13,13 +14,7 @@ export default async function Home() {
     return (
         <div>
             <h1>Main page</h1>
-            {posts.map((post) => (
-                <div className="post">
-                    <h5>{post.title}</h5>
-                    <p>{post.body}</p>
-                    <Link href={`/post/${post.id}`}>More details</Link>
-                </div>
-            ))}
+            <Posts posts={posts} />
         </div>
     );
 }
