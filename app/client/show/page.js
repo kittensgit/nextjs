@@ -1,8 +1,12 @@
-'use client';
-
-import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Show() {
-    const [a, setA] = useState('');
-    return <h2>Show page</h2>;
+    return (
+        <div>
+            <h2>Show page</h2>
+            <Link href={'/'}>Main</Link> <br />
+            <Link href={'/client'}>Client</Link> <br />
+            <Link href={'/client/1234'}>Client 1234</Link>
+        </div>
+    );
 }
