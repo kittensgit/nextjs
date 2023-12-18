@@ -8,3 +8,28 @@ body {
     background: #222;
     color: white;
 }
+
+.container {
+    padding: 50px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    border-bottom: 2px solid #2c2c2c;
+    padding: 20px 50px;
+}
+
+header a {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #f71e1e;
+    transition: all 0.2s ease-in;
+}
+a:hover {
+    color: #ac1818;
+}
